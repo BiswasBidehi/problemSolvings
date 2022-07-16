@@ -11,19 +11,17 @@
 #define rLOOP(i, k, n) for (int i = k; i >= n; --i) // k >= num >= n
 
 int main() {
-  freopen("/tmp/_inputs_", "r", stdin);
+  /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  char c[5];
-  int s;
-  while (1) {
-    scanf("%d", &s);
-    if (s == 0)
-      break;
-
-    getchar();
-    fgets(c, 4, stdin);
-    printf("%s", c);
+  char str[400];
+  int len;
+  while (scanf("%s", str) != EOF) {
+    len = strlen(str);
+    for (int i = 0; i < len; i++) {
+      printf("%c", str[i] - 7);
+    }
+    printf("\n");
   }
   return 0;
 }

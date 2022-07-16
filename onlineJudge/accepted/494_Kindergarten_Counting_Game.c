@@ -11,19 +11,22 @@
 #define rLOOP(i, k, n) for (int i = k; i >= n; --i) // k >= num >= n
 
 int main() {
-  freopen("/tmp/_inputs_", "r", stdin);
+  /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  char c[5];
-  int s;
-  while (1) {
-    scanf("%d", &s);
-    if (s == 0)
-      break;
-
-    getchar();
-    fgets(c, 4, stdin);
-    printf("%s", c);
+  char str[500];
+  while (fgets(str, 500, stdin)) {
+    int words = 0;
+    int alphab = 0;
+    for (int i = 0; i < strlen(str); i++) {
+      if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+        alphab = 1;
+      else {
+        words += alphab;
+        alphab = 0;
+      }
+    }
+    printf("%d\n", words);
   }
   return 0;
 }
