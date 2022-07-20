@@ -13,17 +13,23 @@ int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  int c;
+  char s_v;
+  float arr[12][12], sum = 0;
+  scanf("%d", &c);
+  getchar();
+  scanf("%c", &s_v);
+  loop(i, 12) {
+    loop(j, 12) {
+      scanf("%f", &arr[i][j]);
+      if (j == c)
+        sum += arr[i][j];
+    }
   }
+  if (s_v == 'S')
+    printf("%.1f\n", sum);
+  else if (s_v == 'M')
+    printf("%.1f\n", sum / 12.0);
+
   return 0;
 }

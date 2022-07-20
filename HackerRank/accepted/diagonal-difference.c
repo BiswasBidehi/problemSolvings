@@ -13,17 +13,25 @@ int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  int n, l_r_d = 0, r_l_d = 0;
+  scanf("%d", &n);
+  int num[n][n];
+  loop(i, n) {
+    loop(j, n) { scanf("%d", &num[i][j]); }
   }
+  int i = n - 1, j = 0;
+  while (i >= 0 && j < n) {
+    r_l_d += num[i][j];
+    i--;
+    j++;
+  }
+  i = 0;
+  j = 0;
+  while (i < n && j < n) {
+    l_r_d += num[i][j];
+    i++;
+    j++;
+  }
+  printf("%d\n", (l_r_d > r_l_d) ? (l_r_d - r_l_d) : (r_l_d - l_r_d));
   return 0;
 }

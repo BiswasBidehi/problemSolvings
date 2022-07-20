@@ -13,17 +13,13 @@ int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  int n;
+  long long num, sum = 0;
+  scanf("%d", &n);
+  while (n--) {
+    scanf("%lld", &num);
+    sum += num;
   }
+  printf("%lld\n", sum);
   return 0;
 }

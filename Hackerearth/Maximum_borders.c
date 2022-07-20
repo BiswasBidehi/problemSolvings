@@ -31,48 +31,48 @@ int main() {
       }
     }
 
-    if (m == 0 && n == 0) {
-      printf("%d\n", 0);
-    } else if (m == 1 && n == 1) {
-      if (grid[0][0] == '#')
-        printf("%d", 1);
-      else if (grid[0][0] == '.')
-        printf("%d", 0);
-    } else {
-      int row = 0, col = 0, max = 0;
-      if (n == 1 || (m > 1 && n > 1)) {
-
-        for (int i = 0; i < n; i++) {
-          for (int j = 1; j < m - 1; j++) {
-            if (grid[i][j] == '#' && grid[i][j] == grid[i][j + 1]) {
-              row++;
-              if (row > max)
-                max = row;
-            } else if (grid[i][j] == '.')
-              row = 0;
-            // printf("%c ",grid[i][j]);
-          }
-          // printf("\n");
-        }
-      }
-
-      if (m == 1 || (m > 1 && n > 1)) {
-
-        for (int i = 0; i < m; i++) {
-          for (int j = 0; j < n - 1; j++) {
-            if (grid[j][i] == '#' && grid[j][i] == grid[j + 1][i]) {
-              col++;
-              if (col > max)
-                max = col;
-            } else if (grid[j][i] == '.')
-              col = 0;
-            // printf("(j=%d,i=%d) ", j, i);
-          }
-          // printf("\n");
-        }
-        printf("%d\n", max);
-      }
-    }
+    /* if (m == 0 && n == 0) { */
+    /*   printf("%d\n", 0); */
+    /* } else if (m == 1 && n == 1) { */
+    /*   if (grid[0][0] == '#') */
+    /*     printf("%d", 1); */
+    /*   else if (grid[0][0] == '.') */
+    /*     printf("%d", 0); */
+    /* } else { */
+    /*   int row = 0, col = 0, max = 0; */
+    /*   if (n == 1 || (m > 1 && n > 1)) { */
+    /*  */
+    /*     for (int i = 0; i < n; i++) { */
+    /*       for (int j = 1; j < m - 1; j++) { */
+    /*         if (grid[i][j] == '#' && grid[i][j] == grid[i][j + 1]) { */
+    /*           row++; */
+    /*           if (row > max) */
+    /*             max = row; */
+    /*         } else if (grid[i][j] == '.') */
+    /*           row = 0; */
+    /*         // printf("%c ",grid[i][j]); */
+    /*       } */
+    /*       // printf("\n"); */
+    /*     } */
+    /*   } */
+    /*  */
+    /*   if (m == 1 || (m > 1 && n > 1)) { */
+    /*  */
+    /*     for (int i = 0; i < m; i++) { */
+    /*       for (int j = 0; j < n - 1; j++) { */
+    /*         if (grid[j][i] == '#' && grid[j][i] == grid[j + 1][i]) { */
+    /*           col++; */
+    /*           if (col > max) */
+    /*             max = col; */
+    /*         } else if (grid[j][i] == '.') */
+    /*           col = 0; */
+    /*         // printf("(j=%d,i=%d) ", j, i); */
+    /*       } */
+    /*       // printf("\n"); */
+    /*     } */
+    /*     printf("%d\n", max); */
+    /*   } */
+    /* } */
   }
   return 0;
 }

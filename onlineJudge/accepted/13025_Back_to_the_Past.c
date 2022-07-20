@@ -13,17 +13,6 @@ int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
-  }
+  printf("May 29, 2013 Wednesday\n");
   return 0;
 }

@@ -15,15 +15,6 @@ int main() {
 
   int t;
   scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
-  }
+  LOOP(i, 1, t) { double ab, ac, bc, ade_bdec; }
   return 0;
 }

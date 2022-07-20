@@ -11,19 +11,15 @@
 
 int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
-  /* freopen("/tmp/_outputs_","w",stdout); */
+  /* freopen("/tmp/_outputs_", "w", stdout); */
 
   int t;
+  double pi = 2 * acos(0.0);
   scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  LOOP(i, 1, t) {
+    double r;
+    scanf("%lf", &r);
+    printf("Case %d: %.2lf\n", i, 4 * r * r - pi * r * r);
   }
   return 0;
 }

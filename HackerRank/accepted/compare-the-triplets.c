@@ -13,17 +13,15 @@ int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  int a[3], b[3], alice = 0, bob = 0;
+  loop(i, 3) { scanf("%d", &a[i]); }
+  loop(i, 3) { scanf("%d", &b[i]); }
+  loop(i, 3) {
+    if (a[i] > b[i])
+      alice++;
+    else if (a[i] < b[i])
+      bob++;
   }
+  printf("%d %d\n", alice, bob);
   return 0;
 }

@@ -10,20 +10,25 @@
 #define rLOOP(i, k, n) for (int i = k; i >= n; --i) // k >= num >= n
 
 int main() {
-  /* freopen("/tmp/_inputs_", "r", stdin); */
+  freopen("/tmp/_inputs_", "r", stdin);
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  int n, k;
+  scanf("%d%d", &n, &k);
+  int arr[n];
+  int page = 0;
+  loop(i, n) {
+    scanf("%d", &arr[i]);
+    page += (arr[i] / k);
+    if (arr[i] % k != 0)
+      ++page;
   }
+  int special = 0;
+  /* printf("%d\n", page); */
+  LOOP(i, 1, page) {
+    loop(j, n) { int m = 1; }
+  }
+  printf("%d\n", special);
+
   return 0;
 }

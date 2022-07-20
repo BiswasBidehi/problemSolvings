@@ -11,19 +11,20 @@
 
 int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
-  /* freopen("/tmp/_outputs_","w",stdout); */
+  /* freopen("/tmp/_outputs_", "w", stdout); */
 
   int t;
+  long long n, x;
   scanf("%d", &t);
   while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+    scanf("%lld", &n);
+    x = (-1 + sqrt(1.0 + 8 * n)) / 2;
+    if (x >= 0)
+      printf("%lld\n", x);
+    else {
+      x = (-1 - sqrt(1.0 + 8 * n)) / 2;
+      printf("%lld\n", x);
+    }
   }
   return 0;
 }

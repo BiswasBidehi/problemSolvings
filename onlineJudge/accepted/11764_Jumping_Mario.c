@@ -13,17 +13,23 @@ int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
+  int t, n;
   scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  for (int i = 1; i <= t; i++) {
+    scanf("%d", &n);
+    int x[n], hj = 0, lj = 0;
+    for (int j = 0; j < n; j++) {
+      scanf("%d", &x[j]);
+    }
+    for (int j = 1; j < n; j++) {
+      if (x[j] > x[j - 1])
+        hj++;
+      else if (x[j] < x[j - 1])
+        lj++;
+    }
+    printf("Case %d: %d %d\n", i, hj, lj);
+    lj = 0;
+    hj = 0;
   }
   return 0;
 }

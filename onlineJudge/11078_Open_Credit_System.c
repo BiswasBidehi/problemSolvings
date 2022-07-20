@@ -11,19 +11,25 @@
 
 int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
-  /* freopen("/tmp/_outputs_","w",stdout); */
+  /* freopen("/tmp/_outputs_", "w", stdout); */
 
   int t;
   scanf("%d", &t);
   while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+    int c;
+    scanf("%d", &c);
+    int n[c];
+    for (int i = 0; i < c; i++) {
+      scanf("%d", &n[i]);
+    }
+    int max = -9999999;
+    for (int i = 0; i < c; i++) {
+      for (int j = i + 1; j < c; j++) {
+        if (max < (n[i] - n[j]))
+          max = n[i] - n[j];
+      }
+    }
+    printf("%d\n", max);
   }
   return 0;
 }

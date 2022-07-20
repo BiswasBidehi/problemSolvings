@@ -13,17 +13,22 @@ int main() {
   /* freopen("/tmp/_inputs_", "r", stdin); */
   /* freopen("/tmp/_outputs_","w",stdout); */
 
-  int t;
-  scanf("%d", &t);
-  while (t--) {
-    long int a, b;
-    scanf("%ld%ld", &a, &b);
-    if (a > b)
-      printf(">\n");
-    else if (a < b)
-      printf("<\n");
-    else
-      printf("=\n");
+  double p, a, b, c, d, previous, current, decline;
+  int n;
+  while (scanf("%lf%lf%lf%lf%lf", &p, &a, &b, &c, &d) != EOF) {
+    scanf("%d", &n);
+    decline = 0.0;
+    previous = p * (sin(a + b) + cos(c + d) + 2);
+    for (int k = 2; k <= n; k++) {
+      current = p * (sin(a * k + b) + cos(c * k + d) + 2);
+      if (previous > current) {
+        if (decline < (previous - current)) {
+          decline = previous - current;
+        }
+      } else
+        previous = current;
+    }
+    printf("%lf\n", decline);
   }
   return 0;
 }
